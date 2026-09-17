@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #0b1736;
+  --color-navy-900: #11224d;
+  --color-navy-800: #1b326b;
+  --color-navy-700: #26458c;
+  --color-navy-100: #e8edfa;
+  --color-navy-50: #f4f6fd;
+
+  /* Map standard blue utility tokens to Deep Optical Navy for site-wide brand alignment */
+  --color-blue-950: #0b1736;
+  --color-blue-900: #11224d;
+  --color-blue-800: #1b326b;
+  --color-blue-700: #26458c;
+  --color-blue-100: #e8edfa;
+  --color-blue-50: #f4f6fd;
+
+  /* Optical Refraction Cyan (Iris color in Logo Emblem: #0284c7) */
+  --color-cyan-600: #0284c7;
+  --color-cyan-500: #0ea5e9;
+  --color-cyan-400: #38bdf8;
+  --color-cyan-300: #7dd3fc;
+  --color-cyan-100: #e0f2fe;
+  --color-cyan-50: #f0f9ff;
+
+  --color-emerald-700: #047857;
+  --color-emerald-600: #059669;
+  --color-emerald-500: #10b981;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-50: #ecfdf5;
+
+  --color-amber-500: #f59e0b;
+  --color-amber-400: #fbbf24;
+  --color-amber-300: #fcd34d;
+  --color-amber-100: #fef3c7;
+  --color-amber-50: #fffbeb;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background-color: #f8fafc;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply antialiased selection:bg-cyan-600 selection:text-white bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden;
+  }
+
+  /* Custom Focus State Utility */
+  :focus-visible {
+    outline: 2px solid #0284c7;
+    outline-offset: 2px;
+  }
+
+  /* Prevent text overflow in small mobile screens */
+  p, h1, h2, h3, h4, h5, h6, span, a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+/* Reusable Responsive Classes for Design System */
+@layer components {
+  /* Containers */
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+
+  /* Typography Hierarchies */
+  .heading-hero {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15];
+  }
+
+  .heading-section {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight bg-gradient-to-r from-[#0b1736] via-[#11224d] to-[#0284c7] bg-clip-text text-transparent pb-1 inline-block;
+  }
+
+  .subheading-section {
+    @apply text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed max-w-2xl;
+  }
+
+  /* Logo Gradient Text Utility */
+  .text-gradient-logo {
+    @apply bg-gradient-to-r from-[#0b1736] via-[#11224d] to-[#0284c7] bg-clip-text text-transparent;
+  }
+
+  .text-gradient-cyan {
+    @apply bg-gradient-to-r from-blue-950 via-cyan-600 to-cyan-500 bg-clip-text text-transparent;
+  }
+
+  /* Logo Gradient Backdrops */
+  .bg-gradient-logo-primary {
+    @apply bg-gradient-to-br from-[#0b1736] via-[#11224d] to-[#0284c7];
+  }
+
+  .bg-gradient-logo-cyan {
+    @apply bg-gradient-to-r from-cyan-600 to-blue-900;
+  }
+
+  .bg-gradient-logo-accent {
+    @apply bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600;
+  }
+
+  .bg-gradient-logo-gold {
+    @apply bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500;
+  }
+
+  /* Card Styles - Premium optical local business feel */
+  .card-base {
+    @apply bg-white rounded-2xl border border-slate-200/90 shadow-2xs transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md hover:border-cyan-300 hover:-translate-y-0.5;
+  }
+
+  .card-dark {
+    @apply bg-gradient-to-br from-slate-950 via-[#0b1736] to-slate-900 text-white rounded-2xl border border-blue-900/60 shadow-md p-5 sm:p-7;
+  }
+
+  /* Badge Styles */
+  .badge-base {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-bold border tracking-wide uppercase;
+  }
+
+  .badge-navy {
+    @apply bg-blue-100 text-blue-950 border-blue-200;
+  }
+
+  .badge-cyan {
+    @apply bg-cyan-100 text-cyan-950 border-cyan-200;
+  }
+
+  .badge-green {
+    @apply bg-emerald-100 text-emerald-900 border-emerald-200;
+  }
+
+  .badge-yellow {
+    @apply bg-amber-100 text-amber-950 border-amber-300;
+  }
+
+  /* Button Variants with Touch Target Compliance (min-h: 44px) */
+  .btn-base {
+    @apply inline-flex items-center justify-center font-bold transition-all duration-200 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-2 active:scale-[0.98] cursor-pointer min-h-[44px];
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#0b1736] via-[#11224d] to-[#0284c7] hover:from-[#11224d] hover:to-[#0369a1] text-white shadow-xs hover:shadow-md shadow-blue-950/20;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-xs hover:shadow-md shadow-emerald-600/20;
+  }
+
+  .btn-accent {
+    @apply bg-gradient-to-r from-amber-400 via-amber-500 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-slate-950 shadow-xs hover:shadow-md shadow-amber-400/20;
+  }
+
+  .btn-outline-navy {
+    @apply border-2 border-blue-950 text-blue-950 hover:bg-cyan-50/80 bg-transparent;
+  }
+
+  .btn-ghost {
+    @apply text-slate-700 hover:text-blue-950 hover:bg-slate-100 bg-transparent;
+  }
+}
+

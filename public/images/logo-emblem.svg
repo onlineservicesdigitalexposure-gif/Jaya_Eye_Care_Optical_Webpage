@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="200" height="160" fill="none">
+  <!-- Eye Arch Top Outer -->
+  <path d="M 20 80 C 50 30, 150 30, 180 80 C 150 42, 50 42, 20 80 Z" fill="#0b1736" />
+  
+  <!-- Green Leaf Accent -->
+  <path d="M 100 28 C 115 15, 140 18, 145 32 C 130 38, 110 35, 100 28 Z" fill="#059669" />
+  <path d="M 125 15 C 138 5, 160 8, 162 22 C 148 26, 132 22, 125 15 Z" fill="#f59e0b" />
+
+  <!-- Iris & Pupil -->
+  <circle cx="100" cy="72" r="24" fill="#11224d" />
+  <circle cx="100" cy="72" r="16" fill="#0284c7" />
+  <circle cx="100" cy="72" r="9" fill="#0b1736" />
+  <circle cx="105" cy="67" r="4" fill="#ffffff" />
+
+  <!-- Spectacle Frame Below Eye -->
+  <path d="M 45 102 C 45 92, 92 92, 92 102 C 92 124, 45 124, 45 102 Z" fill="none" stroke="#0b1736" stroke-width="7" />
+  <path d="M 108 102 C 108 92, 155 92, 155 102 C 155 124, 108 124, 108 102 Z" fill="none" stroke="#0b1736" stroke-width="7" />
+  <!-- Bridge -->
+  <path d="M 92 98 Q 100 93 108 98" fill="none" stroke="#0b1736" stroke-width="6" stroke-linecap="round" />
+  <!-- Temples -->
+  <path d="M 45 98 L 26 95" stroke="#0b1736" stroke-width="6" stroke-linecap="round" />
+  <path d="M 155 98 L 174 95" stroke="#0b1736" stroke-width="6" stroke-linecap="round" />
+</svg>
