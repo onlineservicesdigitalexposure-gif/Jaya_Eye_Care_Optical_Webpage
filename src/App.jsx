@@ -16,11 +16,11 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-cyan-600 selection:text-white">
-      {/* Sticky Header Navbar */}
+      {/* Fixed Header Navbar */}
       <Navbar activeSection={activeSection} />
 
       {/* Main SPA Content Sections */}
-      <main className="flex-grow">
+      <main className="flex-grow pt-16 sm:pt-20 lg:pt-24">
         <HeroSection />
         <AboutSection />
         <ServicesSection />

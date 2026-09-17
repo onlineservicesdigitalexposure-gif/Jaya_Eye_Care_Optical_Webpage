@@ -46,11 +46,12 @@
     color: #0f172a;
     background-color: #f8fafc;
     -webkit-tap-highlight-color: transparent;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   
   body {
-    @apply antialiased selection:bg-cyan-600 selection:text-white bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden;
+    @apply antialiased selection:bg-cyan-600 selection:text-white bg-slate-50 text-slate-800 min-h-screen flex flex-col;
+    overflow-x: clip;
   }
 
   /* Custom Focus State Utility */

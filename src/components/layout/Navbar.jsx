@@ -91,10 +91,10 @@ export function Navbar({ activeSection }) {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/98 backdrop-blur-md shadow-md border-b border-cyan-100/80 py-1.5 sm:py-2' 
-          : 'bg-white/95 backdrop-blur-sm border-b border-slate-200/80 py-2 lg:py-2'
+          : 'bg-white/95 backdrop-blur-sm border-b border-slate-200/80 py-2 lg:py-2.5'
       }`}
     >
       <div className="container-custom">
@@ -202,7 +202,7 @@ export function Navbar({ activeSection }) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-white border-b border-slate-200 shadow-2xl"
+            className="md:hidden overflow-y-auto max-h-[calc(100vh-70px)] bg-white border-b border-slate-200 shadow-2xl"
           >
             <div className="container-custom py-4 space-y-3 text-left">
               <nav aria-label="Mobile Navigation" className="flex flex-col space-y-1.5">
