@@ -181,8 +181,10 @@ export function GallerySection() {
           {filteredItems.map((item, index) => (
             <motion.div
               key={item.id}
-              {...cardVariants}
-              transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.35, delay: Math.min(index * 0.04, 0.2), ease: "easeOut" }}
               className={`group relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-cyan-300 cursor-pointer ${
                 item.isHighlight && activeCategory === "All" ? 'md:col-span-2 lg:col-span-2 aspect-[16/9]' : 'aspect-[4/3]'
               }`}
